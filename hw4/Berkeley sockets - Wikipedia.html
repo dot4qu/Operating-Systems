@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Berkeley sockets - Wikipedia</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Berkeley_sockets","wgTitle":"Berkeley sockets","wgCurRevisionId":727277547,"wgRevisionId":727277547,"wgArticleId":85068,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Network socket","Application programming interfaces","Articles with example C code"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Berkeley_sockets","wgRelevantArticleId":85068,"wgRequestId":"WDS4lwpAICgAAAtLOIQAAAHG","wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgFlaggedRevsParams":{"tags":{"status":{"levels":1,"quality":2,"pristine":3}}},"wgStableRevisionId":null,"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"preview":false,"publish":false},"wgBetaFeaturesFeatures":[],"wgMediaViewerOnClick":true,"wgMediaViewerEnabledByDefault":true,"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","usePageImages":true,"usePageDescriptions":true},"wgPreferredVariant":"en","wgMFDisplayWikibaseDescriptions":{"search":true,"nearby":true,"watchlist":true,"tagline":false},"wgRelatedArticles":null,"wgRelatedArticlesUseCirrusSearch":true,"wgRelatedArticlesOnlyUseCirrusSearch":false,"wgULSCurrentAutonym":"English","wgNoticeProject":"wikipedia","wgCentralNoticeCookiesToDelete":[],"wgCentralNoticeCategoriesUsingLegacy":["Fundraising","fundraising"],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgWikibaseItemId":"Q13360597","wgCentralAuthMobileDomain":false,"wgVisualEditorToolbarScrollOffset":0,"wgEditSubmitButtonLabelPublish":false});mw.loader.state({"ext.globalCssJs.user.styles":"ready","ext.globalCssJs.site.styles":"ready","site.styles":"ready","noscript":"ready","user.styles":"ready","user.cssprefs":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","ext.pygments":"ready","wikibase.client.init":"ready","ext.visualEditor.desktopArticleTarget.noscript":"ready","ext.uls.interlanguage":"ready","ext.wikimediaBadges":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready","ext.globalCssJs.user":"ready","ext.globalCssJs.site":"ready"});mw.loader.implement("user.options@0j3lz3q",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens@1dqfd7l",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","ext.centralauth.centralautologin","mmv.head","ext.visualEditor.desktopArticleTarget.init","ext.uls.interface","ext.quicksurveys.init","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="/w/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cext.pygments%2CwikimediaBadges%7Cext.uls.interlanguage%7Cext.visualEditor.desktopArticleTarget.noscript%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles%7Cwikibase.client.init&amp;only=styles&amp;skin=vector"/>
+<script async="" src="/w/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="/w/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.29.0-wmf.3"/>
+<meta name="referrer" content="origin-when-cross-origin"/>
+<link rel="alternate" href="android-app://org.wikipedia/http/en.m.wikipedia.org/wiki/Berkeley_sockets"/>
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="/w/index.php?title=Berkeley_sockets&amp;action=edit"/>
+<link rel="edit" title="Edit this page" href="/w/index.php?title=Berkeley_sockets&amp;action=edit"/>
+<link rel="apple-touch-icon" href="/static/apple-touch/wikipedia.png"/>
+<link rel="shortcut icon" href="/static/favicon/wikipedia.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Wikipedia (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="//en.wikipedia.org/w/api.php?action=rsd"/>
+<link rel="copyright" href="//creativecommons.org/licenses/by-sa/3.0/"/>
+<link rel="canonical" href="https://en.wikipedia.org/wiki/Berkeley_sockets"/>
+<link rel="dns-prefetch" href="//login.wikimedia.org"/>
+<link rel="dns-prefetch" href="//meta.wikimedia.org" />
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Berkeley_sockets rootpage-Berkeley_sockets skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+							<div id="siteNotice"><!-- CentralNotice --></div>
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Berkeley sockets</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From Wikipedia, the free encyclopedia</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><script>function mfTempOpenSection(id){var block=document.getElementById("mf-section-"+id);block.className+=" open-block";block.previousSibling.className+=" open-block";}</script><p><b>Berkeley sockets</b> is an <a href="/wiki/Application_programming_interface" title="Application programming interface">application programming interface</a> (API) for <a href="/wiki/Internet_socket" class="mw-redirect" title="Internet socket">Internet sockets</a> and <a href="/wiki/Unix_domain_socket" title="Unix domain socket">Unix domain sockets</a>, used for <a href="/wiki/Inter-process_communication" title="Inter-process communication">inter-process communication</a> (IPC). It is commonly implemented as a <a href="/wiki/Library_(computing)" title="Library (computing)">library</a> of linkable modules. It originated with the 4.2BSD <a href="/wiki/Unix" title="Unix">Unix</a> released in 1983.</p>
+<p>A socket is an abstract representation (<a href="/wiki/Handle_(computing)" title="Handle (computing)">handle</a>) for the local endpoint of a network communication path. The Berkeley sockets API represents it as a <a href="/wiki/File_descriptor" title="File descriptor">file descriptor</a> (<a href="/wiki/File_handle" class="mw-redirect" title="File handle">file handle</a>) in the <a href="/wiki/Unix_philosophy" title="Unix philosophy">Unix philosophy</a> that provides a common interface for input and output to <a href="/wiki/Standard_streams" title="Standard streams">streams</a> of data.</p>
+<p>Berkeley sockets evolved with little modification from a <a href="/wiki/De_facto_standard" title="De facto standard"><i>de facto</i> standard</a> into a component of the <a href="/wiki/POSIX" title="POSIX">POSIX</a> specification. Therefore, the term <b>POSIX sockets</b> is essentially synonymous with <i>Berkeley sockets</i>. They are also known as <i>BSD sockets</i>, acknowledging the first implementation in the <a href="/wiki/Berkeley_Software_Distribution" title="Berkeley Software Distribution">Berkeley Software Distribution</a>.</p>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#History_and_implementations"><span class="tocnumber">1</span> <span class="toctext">History and implementations</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#BSD_and_POSIX_sockets"><span class="tocnumber">1.1</span> <span class="toctext">BSD and POSIX sockets</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Alternatives"><span class="tocnumber">1.2</span> <span class="toctext">Alternatives</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#Header_files"><span class="tocnumber">2</span> <span class="toctext">Header files</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Socket_API_functions"><span class="tocnumber">3</span> <span class="toctext">Socket API functions</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#socket"><span class="tocnumber">3.1</span> <span class="toctext">socket</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#bind"><span class="tocnumber">3.2</span> <span class="toctext">bind</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#listen"><span class="tocnumber">3.3</span> <span class="toctext">listen</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#accept"><span class="tocnumber">3.4</span> <span class="toctext">accept</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#connect"><span class="tocnumber">3.5</span> <span class="toctext">connect</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#gethostbyname_and_gethostbyaddr"><span class="tocnumber">3.6</span> <span class="toctext">gethostbyname and gethostbyaddr</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="#Protocol_and_address_families"><span class="tocnumber">4</span> <span class="toctext">Protocol and address families</span></a>
+<ul>
+<li class="toclevel-2 tocsection-13"><a href="#Raw_sockets"><span class="tocnumber">4.1</span> <span class="toctext">Raw sockets</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="#Options_for_sockets"><span class="tocnumber">5</span> <span class="toctext">Options for sockets</span></a></li>
+<li class="toclevel-1 tocsection-15"><a href="#Blocking_and_non-blocking_mode"><span class="tocnumber">6</span> <span class="toctext">Blocking and non-blocking mode</span></a></li>
+<li class="toclevel-1 tocsection-16"><a href="#Terminating_sockets"><span class="tocnumber">7</span> <span class="toctext">Terminating sockets</span></a></li>
+<li class="toclevel-1 tocsection-17"><a href="#Client-server_example_using_TCP"><span class="tocnumber">8</span> <span class="toctext">Client-server example using TCP</span></a>
+<ul>
+<li class="toclevel-2 tocsection-18"><a href="#Server"><span class="tocnumber">8.1</span> <span class="toctext">Server</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#Client"><span class="tocnumber">8.2</span> <span class="toctext">Client</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-20"><a href="#Client-server_example_using_UDP"><span class="tocnumber">9</span> <span class="toctext">Client-server example using UDP</span></a>
+<ul>
+<li class="toclevel-2 tocsection-21"><a href="#Server_2"><span class="tocnumber">9.1</span> <span class="toctext">Server</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#Client_2"><span class="tocnumber">9.2</span> <span class="toctext">Client</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-23"><a href="#Caveats"><span class="tocnumber">10</span> <span class="toctext">Caveats</span></a></li>
+<li class="toclevel-1 tocsection-24"><a href="#References"><span class="tocnumber">11</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1 tocsection-25"><a href="#External_links"><span class="tocnumber">12</span> <span class="toctext">External links</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="History_and_implementations">History and implementations</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Berkeley_sockets&amp;action=edit&amp;section=1" title="Edit section: History and implementations">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Berkeley sockets originated with the 4.2BSD <a href="/wiki/Unix" title="Unix">Unix</a> <a href="/wiki/Operating_system" title="Operating system">operating system</a> (released in 1983) as a programming interface. Only in 1989, however, could <a href="/wiki/University_of_California,_Berkeley" title="University of California, Berkeley">UC Berkeley</a> release versions of its operating system and networking library free from the licensing constraints of <a href="/wiki/AT%26T_Corporation" title="AT&amp;T Corporation">AT&amp;T Corporation</a>'s proprietary Unix.</p>
+<p>All modern operating systems implement a version of the Berkeley or POSIX socket interface. It became the standard interface for connecting to the Internet. Even the <a href="/wiki/Winsock" title="Winsock">Winsock</a> implementation for MS Windows, developed by unaffiliated developers, closely follows the standard.</p>
+<p>The BSD sockets API is written in the <a href="/wiki/C_(programming_language)" title="C (programming language)">C programming language</a>. Most other programming languages provide similar interfaces, typically written as a <a href="/wiki/Wrapper_library" title="Wrapper library">wrapper library</a> based on the C API.<sup id="cite_ref-1" class="reference"><a href="#cite_note-1">[1]</a></sup></p>
+<h3><span class="mw-headline" id="BSD_and_POSIX_sockets">BSD and POSIX sockets</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Berkeley_sockets&amp;action=edit&amp;section=2" title="Edit section: BSD and POSIX sockets">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>As the Berkeley socket API evolved and ultimately yielded the POSIX socket API,<sup id="cite_ref-2" class="reference"><a href="#cite_note-2">[2]</a></sup> certain functions were deprecated or removed and replaced by others. The POSIX API is also designed to be <a href="/wiki/Reentrancy_(computing)" title="Reentrancy (computing)">reentrant</a>.</p>
+<table class="wikitable">
+<tr>
+<th>Action</th>
+<th>BSD</th>
+<th>POSIX</th>
+</tr>
+<tr>
+<td>Conversion from text address to packed address</td>
+<td>inet_aton</td>
+<td>inet_pton</td>
+</tr>
+<tr>
+<td>Conversion from packed address to text address</td>
+<td>inet_ntoa</td>
+<td>inet_ntop</td>
+</tr>
+<tr>
+<td>Forward lookup for host name/service</td>
+<td>gethostbyname, gethostbyaddr, getservbyname, getservbyport</td>
+<td><a href="/wiki/Getaddrinfo" title="Getaddrinfo">getaddrinfo</a></td>
+</tr>
+<tr>
+<td>Reverse lookup for host name/service</td>
+<td>gethostbyaddr, getservbyport</td>
+<td><a href="/wiki/Getnameinfo" class="mw-redirect" title="Getnameinfo">getnameinfo</a></td>
+</tr>
+</table>
+<h3><span class="mw-headline" id="Alternatives">Alternatives</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Berkeley_sockets&amp;action=edit&amp;section=3" title="Edit section: Alternatives">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The <a href="/wiki/Streams_(networking_API)" class="mw-redirect" title="Streams (networking API)">STREAMS</a>-based <a href="/wiki/Transport_Layer_Interface" title="Transport Layer Interface">Transport Layer Interface</a> (TLI) API offers an alternative to the socket API. However, recent systems that provide the TLI API also provide the Berkeley socket API.</p>
+<h2><span class="mw-headline" id="Header_files">Header files</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Berkeley_sockets&amp;action=edit&amp;section=4" title="Edit section: Header files">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>The Berkeley socket interface is defined in several header files. The names and content of these files differ slightly between implementations. In general, they include:</p>
+<table class="wikitable">
+<tr>
+<th>File</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>sys/socket.h</td>
+<td>Core socket functions and data structures.</td>
+</tr>
+<tr>
+<td>netinet/in.h</td>
+<td>AF_INET and AF_INET6 address families and their corresponding protocol families, PF_INET and PF_INET6. These include standard IP addresses and TCP and UDP port numbers.</td>
+</tr>
+<tr>
+<td>sys/un.h</td>
+<td>PF_UNIX and PF_LOCAL address family. Used for local communication between programs running on the same computer.</td>
+</tr>
+<tr>
+<td>arpa/inet.h</td>
+<td>Functions for manipulating numeric IP addresses.</td>
+</tr>
+<tr>
+<td>netdb.h</td>
+<td>Functions for translating protocol names and host names into numeric addresses. Searches local data as well as name services.</td>
+</tr>
+</table>
+<h2><span class="mw-headline" id="Socket_API_functions">Socket API functions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Berkeley_sockets&amp;action=edit&amp;section=5" title="Edit section: Socket API functions">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="thumb tright">
+<div class="thumbinner" style="width:222px;"><a href="/wiki/File:InternetSocketBasicDiagram_zhtw.png" class="image"><img alt="" src="//upload.wikimedia.org/wikipedia/commons/thumb/a/a1/InternetSocketBasicDiagram_zhtw.png/220px-InternetSocketBasicDiagram_zhtw.png" width="220" height="314" class="thumbimage" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/a/a1/InternetSocketBasicDiagram_zhtw.png/330px-InternetSocketBasicDiagram_zhtw.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/a/a1/InternetSocketBasicDiagram_zhtw.png/440px-InternetSocketBasicDiagram_zhtw.png 2x" data-file-width="719" data-file-height="1027" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="/wiki/File:InternetSocketBasicDiagram_zhtw.png" class="internal" title="Enlarge"></a></div>
+Flow diagram of client-server transaction using sockets with the Transmission Control Protocol (TCP).</div>
+</div>
+</div>
+<p>This list is a summary of functions or methods provided by the Berkeley sockets API library:</p>
+<ul>
+<li><span style="font-family: monospace, monospace;">socket()</span> creates a new socket of a certain socket type, identified by an integer number, and allocates system resources to it.</li>
+<li><span style="font-family: monospace, monospace;">bind()</span> is typically used on the server side, and associates a socket with a socket address structure, i.e. a specified local port number and IP address.</li>
+<li><span style="font-family: monospace, monospace;">listen()</span> is used on the server side, and causes a bound TCP socket to enter listening state.</li>
+<li><span style="font-family: monospace, monospace;">connect()</span> is used on the client side, and assigns a free local port number to a socket. In case of a TCP socket, it causes an attempt to establish a new TCP connection.</li>
+<li><span style="font-family: monospace, monospace;">accept()</span> is used on the server side. It accepts a received incoming attempt to create a new TCP connection from the remote client, and creates a new socket associated with the socket address pair of this connection.</li>
+<li><span style="font-family: monospace, monospace;">send()</span> and <span style="font-family: monospace, monospace;">recv()</span>, or <span style="font-family: monospace, monospace;">write()</span> and <span style="font-family: monospace, monospace;">read()</span>, or <span style="font-family: monospace, monospace;">sendto()</span> and <span style="font-family: monospace, monospace;">recvfrom()</span>, are used for sending and receiving data to/from a remote socket.</li>
+<li><span style="font-family: monospace, monospace;">close()</span> causes the system to release resources allocated to a socket. In case of TCP, the connection is terminated.</li>
+<li><span style="font-family: monospace, monospace;">gethostbyname()</span> and <span style="font-family: monospace, monospace;">gethostbyaddr()</span> are used to resolve host names and addresses. IPv4 only.</li>
+<li><span style="font-family: monospace, monospace;">select()</span> is used to pend, waiting for one or more of a provided list of sockets to be ready to read, ready to write, or that have errors.</li>
+<li><span style="font-family: monospace, monospace;">poll()</span> is used to check on the state of a socket in a set of sockets. The set can be tested to see if any socket can be written to, read from or if an error occurred.</li>
+<li><span style="font-family: monospace, monospace;">getsockopt()</span> is used to retrieve the current value of a particular socket option for the specified socket.</li>
+<li><span style="font-family: monospace, monospace;">setsockopt()</span> is used to set a particular socket option for the specified socket.</li>
+</ul>
+<h3><span class="mw-headline" id="socket">socket</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Berkeley_sockets&amp;action=edit&amp;section=6" title="Edit section: socket">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The function <span style="font-family: monospace, monospace;">socket()</span> creates an endpoint for communication and returns a <a href="/wiki/File_descriptor" title="File descriptor">file descriptor</a> for the socket. <span style="font-family: monospace, monospace;">socket()</span> takes three arguments:</p>
+<ul>
+<li><span style="font-family: monospace, monospace;"><var>domain</var></span>, which specifies the protocol family of the created socket. For example:
+<ul>
+<li><span style="font-family: monospace, monospace;">AF_INET</span> for network protocol <a href="/wiki/IPv4" title="IPv4">IPv4</a> (IPv4-only) or</li>
+<li><span style="font-family: monospace, monospace;">AF_INET6</span> for <a href="/wiki/IPv6" title="IPv6">IPv6</a> (and in some cases, <a href="/wiki/Backwards_compatible" class="mw-redirect" title="Backwards compatible">backwards compatible</a> with IPv4).</li>
+<li><span style="font-family: monospace, monospace;">AF_UNIX</span> for local socket (using a file).</li>
+</ul>
+</li>
+<li><span style="font-family: monospace, monospace;"><var>type</var></span>, one of:
+<ul>
+<li><span style="font-family: monospace, monospace;">SOCK_STREAM</span> (reliable stream-oriented service or <a href="/wiki/Stream_Sockets" class="mw-redirect" title="Stream Sockets">Stream Sockets</a>)</li>
+<li><span style="font-family: monospace, monospace;">SOCK_DGRAM</span> (datagram service or <a href="/wiki/Datagram_Sockets" class="mw-redirect" title="Datagram Sockets">Datagram Sockets</a>)</li>
+<li><span style="font-family: monospace, monospace;">SOCK_SEQPACKET</span> (reliable sequenced packet service), or</li>
+<li><span style="font-family: monospace, monospace;">SOCK_RAW</span> (raw protocols atop the network layer).</li>
+</ul>
+</li>
+<li><span style="font-family: monospace, monospace;"><var>protocol</var></span> specifying the actual transport protocol to use. The most common are <a href="/wiki/Transmission_Control_Protocol" title="Transmission Control Protocol"><span style="font-family: monospace, monospace;">IPPROTO_TCP</span></a>, <a href="/wiki/SCTP" class="mw-redirect" title="SCTP"><span style="font-family: monospace, monospace;">IPPROTO_SCTP</span></a>, <a href="/wiki/User_Datagram_Protocol" title="User Datagram Protocol"><span style="font-family: monospace, monospace;">IPPROTO_UDP</span></a>, <a href="/wiki/DCCP" class="mw-redirect" title="DCCP"><span style="font-family: monospace, monospace;">IPPROTO_DCCP</span></a>. These protocols are specified in file <i>netinet/in.h</i>. The value <span style="font-family: monospace, monospace;">0</span> may be used to select a default protocol from the selected domain and type.</li>
+</ul>
+<p>The function returns <span style="font-family: monospace, monospace;">-1</span> if an error occurred. Otherwise, it returns an integer representing the newly assigned descriptor.</p>
+<h3><span class="mw-headline" id="bind">bind</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Berkeley_sockets&amp;action=edit&amp;section=7" title="Edit section: bind">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><span style="font-family: monospace, monospace;">bind()</span> assigns a socket to an address. When a socket is created using <span style="font-family: monospace, monospace;">socket()</span>, it is only given a protocol family, but not assigned an address. This association with an address must be performed with the bind() system call before the socket can accept connections to other hosts. <span style="font-family: monospace, monospace;">bind()</span> takes three arguments:</p>
+<ul>
+<li><span style="font-family: monospace, monospace;">sockfd</span>, a descriptor representing the socket to perform the bind on.</li>
+<li><span style="font-family: monospace, monospace;">my_addr</span>, a pointer to a <span style="font-family: monospace, monospace;">sockaddr</span> structure representing the address to bind to.</li>
+<li><span style="font-family: monospace, monospace;">addrlen</span>, a <span style="font-family: monospace, monospace;">socklen_t</span> field specifying the size of the <span style="font-family: monospace, monospace;">sockaddr</span> structure.</li>
+</ul>
+<p>Bind() returns 0 on success and -1 if an error occurs.</p>
+<h3><span class="mw-headline" id="listen">listen</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Berkeley_sockets&amp;action=edit&amp;section=8" title="Edit section: listen">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>After a socket has been associated with an address, <span style="font-family: monospace, monospace;">listen()</span> prepares it for incoming connections. However, this is only necessary for the stream-oriented (connection-oriented) data modes, i.e., for socket types (<span style="font-family: monospace, monospace;">SOCK_STREAM</span>, <span style="font-family: monospace, monospace;">SOCK_SEQPACKET</span>). listen() requires two arguments:</p>
+<ul>
+<li><span style="font-family: monospace, monospace;">sockfd</span>, a valid socket descriptor.</li>
+<li><span style="font-family: monospace, monospace;">backlog</span>, an integer representing the number of pending connections that can be queued up at any one time. The operating system usually places a cap on this value.</li>
+</ul>
+<p>Once a connection is accepted, it is dequeued. On success, 0 is returned. If an error occurs, -1 is returned.</p>
+<h3><span class="mw-headline" id="accept">accept</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Berkeley_sockets&amp;action=edit&amp;section=9" title="Edit section: accept">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>When an application is listening for stream-oriented connections from other hosts, it is notified of such events (cf. <a href="/wiki/Select_(Unix)" title="Select (Unix)">select()</a> function) and must initialize the connection using the <span style="font-family: monospace, monospace;">accept()</span> function. The accept() function creates a new socket for each connection and removes the connection from the listen queue. It takes the following arguments:</p>
+<ul>
+<li><span style="font-family: monospace, monospace;">sockfd</span>, the descriptor of the listening socket that has the connection queued.</li>
+<li><span style="font-family: monospace, monospace;">cliaddr</span>, a pointer to a sockaddr structure to receive the client's address information.</li>
+<li><span style="font-family: monospace, monospace;">addrlen</span>, a pointer to a <span style="font-family: monospace, monospace;">socklen_t</span> location that specifies the size of the client address structure passed to accept(). When <span style="font-family: monospace, monospace;">accept()</span> returns, this location indicates how many bytes of the structure were actually used.</li>
+</ul>
+<p>The accept() function returns the new socket descriptor for the accepted connection, or -1 if an error occurs. All further communication with the remote host now occurs via this new socket.</p>
+<p>Datagram sockets do not require processing by accept() since the receiver may immediately respond to the request using the listening socket.</p>
+<h3><span class="mw-headline" id="connect">connect</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Berkeley_sockets&amp;action=edit&amp;section=10" title="Edit section: connect">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The <span style="font-family: monospace, monospace;">connect()</span> system call establishes a direct communication link to a specific remote host identified by its address via a socket, identified by its file descriptor.</p>
+<p>When using a <a href="/wiki/Connection-oriented_communication" title="Connection-oriented communication">connection-oriented</a> protocol, this establishes a <span style="font-family: monospace, monospace;">connection</span>. Certain types of protocols are <span style="font-family: monospace, monospace;">connectionless</span>, most notably the <a href="/wiki/User_Datagram_Protocol" title="User Datagram Protocol">User Datagram Protocol</a>. When used with connectionless protocols, <span style="font-family: monospace, monospace;">connect</span> defines the remote address for sending and receiving data, allowing the use of functions such as <span style="font-family: monospace, monospace;">send()</span> and <span style="font-family: monospace, monospace;">recv()</span>. In these cases, the connect function prevents reception of datagrams from other sources.</p>
+<p><span style="font-family: monospace, monospace;">connect()</span> returns an integer representing the error code: 0 represents success, while -1 represents an error. Historically, in the BSD-derived systems, the state of a socket descriptor is undefined if the call to connect() fails (as it is specified in the Single Unix Specification), thus, portable applications should close the socket descriptor immediately and obtain a new descriptor with socket(), in the case the call to connect() fails.<sup id="cite_ref-FOOTNOTE2013StevensRago607_3-0" class="reference"><a href="#cite_note-FOOTNOTE2013StevensRago607-3">[3]</a></sup></p>
+<h3><span class="mw-headline" id="gethostbyname_and_gethostbyaddr">gethostbyname and gethostbyaddr</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Berkeley_sockets&amp;action=edit&amp;section=11" title="Edit section: gethostbyname and gethostbyaddr">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The <span style="font-family: monospace, monospace;">gethostbyname()</span> and <span style="font-family: monospace, monospace;">gethostbyaddr()</span> functions are used to resolve host names and addresses in the <a href="/wiki/Domain_name_system" class="mw-redirect" title="Domain name system">domain name system</a> or the local host's other resolver mechanisms (e.g., /etc/hosts lookup). They return a pointer to an object of type <span style="font-family: monospace, monospace;"><var>struct hostent</var></span>, which describes an <a href="/wiki/Internet_Protocol" title="Internet Protocol">Internet Protocol</a> host. The functions take the following arguments:</p>
+<ul>
+<li><span style="font-family: monospace, monospace;"><var>name</var></span> specifies the name of the host. For example: www.wikipedia.org</li>
+<li><span style="font-family: monospace, monospace;"><var>addr</var></span> specifies a pointer to a <var>struct in_addr</var> containing the address of the host.</li>
+<li><span style="font-family: monospace, monospace;"><var>len</var></span> specifies the length, in bytes, of <var>addr</var>.</li>
+<li><span style="font-family: monospace, monospace;"><var>type</var></span> specifies the address family type (e.g., AF_INET) of the host address.</li>
+</ul>
+<p>The functions return a NULL pointer in case of error, in which case the external integer <span style="font-family: monospace, monospace;"><var>h_errno</var></span> may be checked to see whether this is a temporary failure or an invalid or unknown host. Otherwise a valid <span style="font-family: monospace, monospace;"><var>struct hostent *</var></span> is returned.</p>
+<p>These functions are not strictly a component of the BSD socket API, but are often used in conjunction with the API functions. Furthermore, these functions are now considered legacy interfaces for querying the domain name system. New functions that are completely protocol-agnostic (supporting IPv6) have been defined. These new function are <a href="/wiki/Getaddrinfo" title="Getaddrinfo">getaddrinfo() and getnameinfo()</a>, and are based on a new <i><a href="/wiki/Addrinfo" class="mw-redirect" title="Addrinfo">addrinfo</a></i> data structure.</p>
+<h2><span class="mw-headline" id="Protocol_and_address_families">Protocol and address families</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Berkeley_sockets&amp;action=edit&amp;section=12" title="Edit section: Protocol and address families">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>The socket API is a general interface for Unix networking and allows the use of various network protocols and addressing architectures.</p>
+<p>The following lists a sampling of protocol families (preceded by the standard symbolic identifier) defined in a modern <a href="/wiki/Linux" title="Linux">Linux</a> or <a href="/wiki/BSD" class="mw-redirect" title="BSD">BSD</a> implementation:</p>
+<table class="wikitable">
+<tr>
+<th>Identifier</th>
+<th>Function or use</th>
+</tr>
+<tr>
+<td>PF_LOCAL, PF_UNIX, PF_FILE</td>
+<td>Local to host (pipes and file-domain)</td>
+</tr>
+<tr>
+<td>PF_INET</td>
+<td><a href="/wiki/IPv4" title="IPv4">Internet Protocol version 4</a></td>
+</tr>
+<tr>
+<td>PF_AX25</td>
+<td>Amateur Radio <a href="/wiki/AX.25" title="AX.25">AX.25</a></td>
+</tr>
+<tr>
+<td>PF_IPX</td>
+<td>Novell's <a href="/wiki/Internetwork_Packet_Exchange" title="Internetwork Packet Exchange">Internetwork Packet Exchange</a></td>
+</tr>
+<tr>
+<td>PF_APPLETALK</td>
+<td><a href="/wiki/Appletalk" class="mw-redirect" title="Appletalk">Appletalk</a></td>
+</tr>
+<tr>
+<td>PF_NETROM</td>
+<td>Amateur radio NetROM (related to AX.25)</td>
+</tr>
+<tr>
+<td>PF_BRIDGE</td>
+<td>Multiprotocol <a href="/wiki/Bridging_(networking)" title="Bridging (networking)">bridge</a></td>
+</tr>
+<tr>
+<td>PF_ATMPVC</td>
+<td><a href="/wiki/Asynchronous_Transfer_Mode" title="Asynchronous Transfer Mode">Asynchronous Transfer Mode</a> Permanent Virtual Circuits</td>
+</tr>
+<tr>
+<td>PF_ATMSVC</td>
+<td>Asynchronous Transfer Mode Switched Virtual Circuits</td>
+</tr>
+<tr>
+<td>PF_INET6</td>
+<td><a href="/wiki/IPv6" title="IPv6">Internet Protocol version 6</a></td>
+</tr>
+<tr>
+<td>PF_DECnet</td>
+<td>Reserved for DECnet project</td>
+</tr>
+<tr>
+<td>PF_NETBEUI</td>
+<td>Reserved for 802.2LLC project</td>
+</tr>
+<tr>
+<td>PF_SECURITY</td>
+<td>Security callback pseudo AF</td>
+</tr>
+<tr>
+<td>PF_KEY</td>
+<td>PF_KEY key management API</td>
+</tr>
+<tr>
+<td>PF_NETLINK, PF_ROUTE</td>
+<td>routing API</td>
+</tr>
+<tr>
+<td>PF_PACKET</td>
+<td>Packet capture sockets</td>
+</tr>
+<tr>
+<td>PF_ECONET</td>
+<td>Acorn <a href="/wiki/Econet" title="Econet">Econet</a></td>
+</tr>
+<tr>
+<td>PF_SNA</td>
+<td>Linux <a href="/wiki/IBM_Systems_Network_Architecture" title="IBM Systems Network Architecture">IBM Systems Network Architecture</a> (SNA) Project</td>
+</tr>
+<tr>
+<td>PF_IRDA</td>
+<td><a href="/wiki/IrDA" class="mw-redirect" title="IrDA">IrDA</a> sockets</td>
+</tr>
+<tr>
+<td>PF_PPPOX</td>
+<td><a href="/wiki/PPPoX" title="PPPoX">PPP over X</a> sockets</td>
+</tr>
+<tr>
+<td>PF_WANPIPE</td>
+<td>Sangoma Wanpipe API sockets</td>
+</tr>
+<tr>
+<td>PF_BLUETOOTH</td>
+<td><a href="/wiki/Bluetooth" title="Bluetooth">Bluetooth</a> sockets</td>
+</tr>
+</table>
+<p>A socket for communications using any family is created with the <code class="mw-highlight" id="" style="" dir="ltr">socket()</code> function, by specifying the desired protocol family (<span style="font-family: monospace, monospace;">PF_</span>-identifier) as an argument.</p>
+<p>The original design concept of the socket interface distinguished between protocol types (families) and the specific address types that each may use. It was envisioned that a protocol family may have several address types. Address types were defined by additional symbolic constants, using the prefix <span style="font-family: monospace, monospace;">AF</span> instead of <span style="font-family: monospace, monospace;">PF</span>. The <span style="font-family: monospace, monospace;">AF</span>-identifiers are intended for all data structures that specifically deal with the address type and not the protocol family. However, this concept of separation of protocol and address type has not found implementation support and the <span style="font-family: monospace, monospace;">AF</span>-constants were defined by the corresponding protocol identifier, leaving the distinction between <span style="font-family: monospace, monospace;">AF</span> and <span style="font-family: monospace, monospace;">PF</span> constants as a technical argument of no practical consequence. Indeed, much confusion exists in the proper usage of both forms.<sup id="cite_ref-4" class="reference"><a href="#cite_note-4">[4]</a></sup></p>
+<p>The POSIX.1—2008 specification doesn't specify any <span style="font-family: monospace, monospace;">PF</span>-constants, but only <span style="font-family: monospace, monospace;">AF</span>-constants<sup id="cite_ref-5" class="reference"><a href="#cite_note-5">[5]</a></sup></p>
+<h3><span class="mw-headline" id="Raw_sockets">Raw sockets</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Berkeley_sockets&amp;action=edit&amp;section=13" title="Edit section: Raw sockets">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><a href="/wiki/Raw_socket" title="Raw socket">Raw sockets</a> provide a simple interface that bypasses the processing by the host's TCP/IP stack. They permit implementation of networking protocols in <a href="/wiki/User_space" title="User space">user space</a> and aid in debugging of the protocol stack.<sup id="cite_ref-6" class="reference"><a href="#cite_note-6">[6]</a></sup> Raw sockets are used by some services, such as <a href="/wiki/Internet_Control_Message_Protocol" title="Internet Control Message Protocol">ICMP</a>, that operate at the <a href="/wiki/Internet_Layer" class="mw-redirect" title="Internet Layer">Internet Layer</a> of the TCP/IP model.</p>
+<h2><span class="mw-headline" id="Options_for_sockets">Options for sockets</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Berkeley_sockets&amp;action=edit&amp;section=14" title="Edit section: Options for sockets">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>After creating a socket, it is possible to set options on it. Some of the more common options are:</p>
+<ul>
+<li><span style="font-family: monospace, monospace;">TCP_NODELAY</span> disables the <a href="/wiki/Nagle_algorithm" class="mw-redirect" title="Nagle algorithm">Nagle algorithm</a>.</li>
+<li><span style="font-family: monospace, monospace;">SO_KEEPALIVE</span> enables periodic 'liveness' pings, if supported by the OS.</li>
+</ul>
+<h2><span class="mw-headline" id="Blocking_and_non-blocking_mode">Blocking and non-blocking mode</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Berkeley_sockets&amp;action=edit&amp;section=15" title="Edit section: Blocking and non-blocking mode">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Berkeley sockets can operate in one of two modes: blocking or non-blocking.</p>
+<p>A blocking socket does not return control until it has sent (or received) some or all data specified for the operation. It is normal for a blocking socket not to send all data. The application must check the return value to determine how many bytes have been sent or received and it must resend any data not already processed.<sup id="cite_ref-7" class="reference"><a href="#cite_note-7">[7]</a></sup> When using blocking sockets, special consideration should be given to accept() as it may still block after indicating readability if a client disconnects during the connection phase.</p>
+<p>On the other hand, a <i>non-blocking socket</i> returns whatever is in the receive buffer and immediately continues. If not written correctly, programs using non-blocking sockets are particularly susceptible to <a href="/wiki/Race_condition" title="Race condition">race conditions</a> due to variances in network link speed.</p>
+<p>A socket is typically set to blocking or nonblocking mode using the <span style="font-family: monospace, monospace;"><a href="/w/index.php?title=Fcntl&amp;action=edit&amp;redlink=1" class="new" title="Fcntl (page does not exist)">fcntl</a>()</span> or <span style="font-family: monospace, monospace;"><a href="/wiki/Ioctl" title="Ioctl">ioctl</a>()</span> functions.</p>
+<h2><span class="mw-headline" id="Terminating_sockets">Terminating sockets</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Berkeley_sockets&amp;action=edit&amp;section=16" title="Edit section: Terminating sockets">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>The operating system does not release the resources allocated to a socket until the socket is closed. This is especially important if the <i>connect</i> call fails and will be retried.</p>
+<p>When an application closes a socket, only the interface to the socket is destroyed. It is the kernel's responsibility to destroy the socket internally. Sometimes, a socket may enter a <span style="font-family: monospace, monospace;">TIME_WAIT</span> state, on the server side, for up to 4 minutes.<sup id="cite_ref-8" class="reference"><a href="#cite_note-8">[8]</a></sup></p>
+<p>On <a href="/wiki/SVR4" class="mw-redirect" title="SVR4">SVR4</a> systems use of <code class="mw-highlight" id="" style="" dir="ltr">close()</code> may discard data. The use of <code class="mw-highlight" id="" style="" dir="ltr">shutdown()</code> or SO_LINGER may be required on these systems to guarantee delivery of all data.<sup id="cite_ref-9" class="reference"><a href="#cite_note-9">[9]</a></sup></p>
+<h2><span class="mw-headline" id="Client-server_example_using_TCP">Client-server example using TCP</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Berkeley_sockets&amp;action=edit&amp;section=17" title="Edit section: Client-server example using TCP">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>The <a href="/wiki/Transmission_Control_Protocol" title="Transmission Control Protocol">Transmission Control Protocol</a> (TCP) is a <a href="/wiki/Connection-oriented_communication" title="Connection-oriented communication">connection-oriented</a> protocol that provides a variety of error correction and performance features for transmission of byte streams. A process creates a TCP socket by calling the <code class="mw-highlight" id="" style="" dir="ltr">socket()</code> function with the parameters for the protocol family (<span style="font-family: monospace, monospace;"><i><a href="/wiki/PF_INET" class="mw-redirect" title="PF INET">PF INET</a></i>, PF_INET6</span>), the socket mode for <a href="/wiki/Stream_Sockets" class="mw-redirect" title="Stream Sockets">Stream Sockets</a> (<span style="font-family: monospace, monospace;">SOCK_STREAM</span>), and the IP protocol identifier for TCP (<span style="font-family: monospace, monospace;">IPPROTO_TCP</span>).</p>
+<h3><span class="mw-headline" id="Server">Server</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Berkeley_sockets&amp;action=edit&amp;section=18" title="Edit section: Server">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Setting up a simple TCP server involves the following steps:</p>
+<ol>
+<li>Creating a TCP socket, with a call to <code class="mw-highlight" id="" style="" dir="ltr">socket()</code>.</li>
+<li>Binding the socket to the listen port, with a call to <code class="mw-highlight" id="" style="" dir="ltr">bind()</code>. Before calling <code class="mw-highlight" id="" style="" dir="ltr">bind()</code>, a programmer must declare a <code class="mw-highlight" id="" style="" dir="ltr">sockaddr_in</code> structure, clear it (with <code class="mw-highlight" id="" style="" dir="ltr">memset()</code>), and the <i>sin_family</i> (<code class="mw-highlight" id="" style="" dir="ltr">AF_INET</code>), and fill its <code class="mw-highlight" id="" style="" dir="ltr">sin_port</code> (the listening port, in <a href="/wiki/Network_byte_order" class="mw-redirect" title="Network byte order">network byte order</a>) fields. Converting a <i>short int</i> to network byte order can be done by calling the function <code class="mw-highlight" id="" style="" dir="ltr">htons()</code> (host to network short).</li>
+<li>Preparing the socket to listen for connections (making it a listening socket), with a call to <code class="mw-highlight" id="" style="" dir="ltr">listen()</code>.</li>
+<li>Accepting incoming connections, via a call to <code class="mw-highlight" id="" style="" dir="ltr">accept()</code>. This blocks until an incoming connection is received, and then returns a socket descriptor for the accepted connection. The initial descriptor remains a listening descriptor, and <code class="mw-highlight" id="" style="" dir="ltr">accept()</code> can be called again at any time with this socket, until it is closed.</li>
+<li>Communicating with the remote host, which can be done through <code class="mw-highlight" id="" style="" dir="ltr">send()</code> and <code class="mw-highlight" id="" style="" dir="ltr">recv()</code> or <code class="mw-highlight" id="" style="" dir="ltr">write()</code> and <code class="mw-highlight" id="" style="" dir="ltr">read()</code>.</li>
+<li>Eventually closing each socket that was opened, once it is no longer needed, using <code class="mw-highlight" id="" style="" dir="ltr">close()</code>.</li>
+</ol>
+<p>The following program creates a TCP server on port number 1100:</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr">
+<pre>
+  #include &lt;sys/types.h&gt;
+  #include &lt;sys/socket.h&gt;
+  #include &lt;netinet/in.h&gt;
+  #include &lt;arpa/inet.h&gt;
+  #include &lt;stdio.h&gt;
+  #include &lt;stdlib.h&gt;
+  #include &lt;string.h&gt;
+  #include &lt;unistd.h&gt;
+  
+  int main(void)
+  {
+    struct sockaddr_in sa;
+    int SocketFD = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP);
+    if (SocketFD == -1) {
+      perror("cannot create socket");
+      exit(EXIT_FAILURE);
+    }
+  
+    memset(&amp;sa, 0, sizeof sa);
+  
+    sa.sin_family = AF_INET;
+    sa.sin_port = htons(1100);
+    sa.sin_addr.s_addr = htonl(INADDR_ANY);
+  
+    if (bind(SocketFD,(struct sockaddr *)&amp;sa, sizeof sa) == -1) {
+      perror("bind failed");
+      close(SocketFD);
+      exit(EXIT_FAILURE);
+    }
+  
+    if (listen(SocketFD, 10) == -1) {
+      perror("listen failed");
+      close(SocketFD);
+      exit(EXIT_FAILURE);
+    }
+  
+    for (;;) {
+      int ConnectFD = accept(SocketFD, NULL, NULL);
+  
+      if (0 &gt; ConnectFD) {
+        perror("accept failed");
+        close(SocketFD);
+        exit(EXIT_FAILURE);
+      }
+  
+      /* perform read write operations ... 
+      read(ConnectFD, buff, size)
+      */
+  
+      if (shutdown(ConnectFD, SHUT_RDWR) == -1) {
+        perror("shutdown failed");
+        close(ConnectFD);
+        close(SocketFD);
+        exit(EXIT_FAILURE);
+      }
+      close(ConnectFD);
+    }
+
+    close(SocketFD);
+    return EXIT_SUCCESS;  
+}
+</pre></div>
+<h3><span class="mw-headline" id="Client">Client</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Berkeley_sockets&amp;action=edit&amp;section=19" title="Edit section: Client">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Programming a TCP client application involves the following steps:</p>
+<ol>
+<li>Creating a TCP socket, with a call to <code class="mw-highlight" id="" style="" dir="ltr">socket()</code>.</li>
+<li>Connecting to the server with the use of <code class="mw-highlight" id="" style="" dir="ltr">connect()</code>, passing a <code class="mw-highlight" id="" style="" dir="ltr">sockaddr_in</code> structure with the <code class="mw-highlight" id="" style="" dir="ltr">sin_family</code> set to <span style="font-family: monospace, monospace;">AF_INET</span>, <code class="mw-highlight" id="" style="" dir="ltr">sin_port</code> set to the port the endpoint is listening (in network byte order), and <code class="mw-highlight" id="" style="" dir="ltr">sin_addr</code> set to the IP address of the listening server (also in network byte order.)</li>
+<li>Communicating with the server by using <code class="mw-highlight" id="" style="" dir="ltr">send()</code> and <code class="mw-highlight" id="" style="" dir="ltr">recv()</code> or <code class="mw-highlight" id="" style="" dir="ltr">write()</code> and <code class="mw-highlight" id="" style="" dir="ltr">read()</code>.</li>
+<li>Terminating the connection and cleaning up with a call to <code class="mw-highlight" id="" style="" dir="ltr">close()</code>.</li>
+</ol>
+<div class="mw-highlight mw-content-ltr" dir="ltr">
+<pre>
+  #include &lt;sys/types.h&gt;
+  #include &lt;sys/socket.h&gt;
+  #include &lt;netinet/in.h&gt;
+  #include &lt;arpa/inet.h&gt;
+  #include &lt;stdio.h&gt;
+  #include &lt;stdlib.h&gt;
+  #include &lt;string.h&gt;
+  #include &lt;unistd.h&gt;
+  
+  int main(void)
+  {
+    struct sockaddr_in sa;
+    int res;
+    int SocketFD;
+
+    SocketFD = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP);
+    if (SocketFD == -1) {
+      perror("cannot create socket");
+      exit(EXIT_FAILURE);
+    }
+  
+    memset(&amp;sa, 0, sizeof sa);
+  
+    sa.sin_family = AF_INET;
+    sa.sin_port = htons(1100);
+    res = inet_pton(AF_INET, "192.168.1.3", &amp;sa.sin_addr);
+
+    if (connect(SocketFD, (struct sockaddr *)&amp;sa, sizeof sa) == -1) {
+      perror("connect failed");
+      close(SocketFD);
+      exit(EXIT_FAILURE);
+    }
+  
+    /* perform read write operations ... */
+  
+    shutdown(SocketFD, SHUT_RDWR);
+  
+    close(SocketFD);
+    return EXIT_SUCCESS;
+  }
+</pre></div>
+<h2><span class="mw-headline" id="Client-server_example_using_UDP">Client-server example using UDP</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Berkeley_sockets&amp;action=edit&amp;section=20" title="Edit section: Client-server example using UDP">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>The <a href="/wiki/User_Datagram_Protocol" title="User Datagram Protocol">User Datagram Protocol</a> (UDP) is a <a href="/wiki/Connectionless" class="mw-redirect" title="Connectionless">connectionless</a> protocol with no guarantee of delivery. UDP packets may arrive out of order, multiple times, or not at all. Because of this minimal design, UDP has considerably less overhead than TCP. Being connectionless means that there is no concept of a stream or permanent connection between two hosts. Such data are referred to as datagrams (<a href="/wiki/Datagram_Sockets" class="mw-redirect" title="Datagram Sockets">Datagram Sockets</a>).</p>
+<p>UDP address space, the space of UDP port numbers (in ISO terminology, the <a href="/wiki/TSAP" class="mw-redirect" title="TSAP">TSAPs</a>), is completely disjoint from that of TCP ports.</p>
+<h3><span class="mw-headline" id="Server_2">Server</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Berkeley_sockets&amp;action=edit&amp;section=21" title="Edit section: Server">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>An application may set up a UDP server on port 7654 as follows. This infinite loop receives any UDP datagrams to port 7654 using <code class="mw-highlight" id="" style="" dir="ltr">recvfrom()</code>.</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr">
+<pre>
+<span class="lineno"> 1 </span>#include &lt;stdio.h&gt;
+<span class="lineno"> 2 </span>#include &lt;errno.h&gt;
+<span class="lineno"> 3 </span>#include &lt;string.h&gt;
+<span class="lineno"> 4 </span>#include &lt;sys/socket.h&gt;
+<span class="lineno"> 5 </span>#include &lt;sys/types.h&gt;
+<span class="lineno"> 6 </span>#include &lt;netinet/in.h&gt;
+<span class="lineno"> 7 </span>#include &lt;unistd.h&gt; /* for close() for socket */ 
+<span class="lineno"> 8 </span>#include &lt;stdlib.h&gt;
+<span class="lineno"> 9 </span>
+<span class="lineno">10 </span>int main(void)
+<span class="lineno">11 </span>{
+<span class="lineno">12 </span>  int sock;
+<span class="lineno">13 </span>  struct sockaddr_in sa; 
+<span class="lineno">14 </span>  char buffer[1024];
+<span class="lineno">15 </span>  ssize_t recsize;
+<span class="lineno">16 </span>  socklen_t fromlen;
+<span class="lineno">17 </span>
+<span class="lineno">18 </span>  memset(&amp;sa, 0, sizeof sa);
+<span class="lineno">19 </span>  sa.sin_family = AF_INET;
+<span class="lineno">20 </span>  sa.sin_addr.s_addr = htonl(INADDR_ANY);
+<span class="lineno">21 </span>  sa.sin_port = htons(7654);
+<span class="lineno">22 </span>  fromlen = sizeof sa;
+<span class="lineno">23 </span>
+<span class="lineno">24 </span>  sock = socket(PF_INET, SOCK_DGRAM, IPPROTO_UDP);
+<span class="lineno">25 </span>  if (bind(sock, (struct sockaddr *)&amp;sa, sizeof sa) == -1) {
+<span class="lineno">26 </span>    perror("error bind failed");
+<span class="lineno">27 </span>    close(sock);
+<span class="lineno">28 </span>    exit(EXIT_FAILURE);
+<span class="lineno">29 </span>  }
+<span class="lineno">30 </span>
+<span class="lineno">31 </span>  for (;;) {
+<span class="lineno">32 </span><span class="hll">    recsize = recvfrom(sock, (void*)buffer, sizeof buffer, 0, (struct sockaddr*)&amp;sa, &amp;fromlen);
+</span><span class="lineno">33 </span>    if (recsize &lt; 0) {
+<span class="lineno">34 </span>      fprintf(stderr, "%s\n", strerror(errno));
+<span class="lineno">35 </span>      exit(EXIT_FAILURE);
+<span class="lineno">36 </span>    }
+<span class="lineno">37 </span>    printf("recsize: %d\n ", (int)recsize);
+<span class="lineno">38 </span>    sleep(1);
+<span class="lineno">39 </span>    printf("datagram: %.*s\n", (int)recsize, buffer);
+<span class="lineno">40 </span>  }
+<span class="lineno">41 </span>}
+</pre></div>
+<h3><span class="mw-headline" id="Client_2">Client</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Berkeley_sockets&amp;action=edit&amp;section=22" title="Edit section: Client">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>A simple demonstration of sending a UDP packet containing the string "Hello World!" to address 127.0.0.1 and port 7654 might look like this:</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr">
+<pre>
+<span class="lineno"> 1 </span>#include &lt;stdlib.h&gt;
+<span class="lineno"> 2 </span>#include &lt;stdio.h&gt;
+<span class="lineno"> 3 </span>#include &lt;errno.h&gt;
+<span class="lineno"> 4 </span>#include &lt;string.h&gt;
+<span class="lineno"> 5 </span>#include &lt;sys/socket.h&gt;
+<span class="lineno"> 6 </span>#include &lt;sys/types.h&gt;
+<span class="lineno"> 7 </span>#include &lt;netinet/in.h&gt;
+<span class="lineno"> 8 </span>#include &lt;unistd.h&gt;
+<span class="lineno"> 9 </span>#include &lt;arpa/inet.h&gt;
+<span class="lineno">10 </span>
+<span class="lineno">11 </span>int main(void)
+<span class="lineno">12 </span>{
+<span class="lineno">13 </span>  int sock;
+<span class="lineno">14 </span>  struct sockaddr_in sa;
+<span class="lineno">15 </span>  int bytes_sent;
+<span class="lineno">16 </span>  char buffer[200];
+<span class="lineno">17 </span> 
+<span class="lineno">18 </span>  strcpy(buffer, "hello world!");
+<span class="lineno">19 </span> 
+<span class="lineno">20 </span>  /* create an Internet, datagram, socket using UDP */
+<span class="lineno">21 </span>  sock = socket(PF_INET, SOCK_DGRAM, IPPROTO_UDP);
+<span class="lineno">22 </span>  if (sock == -1) {
+<span class="lineno">23 </span>      /* if socket failed to initialize, exit */
+<span class="lineno">24 </span>      printf("Error Creating Socket");
+<span class="lineno">25 </span>      exit(EXIT_FAILURE);
+<span class="lineno">26 </span>    }
+<span class="lineno">27 </span> 
+<span class="lineno">28 </span>  /* Zero out socket address */
+<span class="lineno">29 </span>  memset(&amp;sa, 0, sizeof sa);
+<span class="lineno">30 </span>  
+<span class="lineno">31 </span>  /* The address is IPv4 */
+<span class="lineno">32 </span>  sa.sin_family = AF_INET;
+<span class="lineno">33 </span> 
+<span class="lineno">34 </span>   /* IPv4 adresses is a uint32_t, convert a string representation of the octets to the appropriate value */
+<span class="lineno">35 </span>  sa.sin_addr.s_addr = inet_addr("127.0.0.1");
+<span class="lineno">36 </span>  
+<span class="lineno">37 </span>  /* sockets are unsigned shorts, htons(x) ensures x is in network byte order, set the port to 7654 */
+<span class="lineno">38 </span>  sa.sin_port = htons(7654);
+<span class="lineno">39 </span> 
+<span class="lineno">40 </span><span class="hll">  bytes_sent = sendto(sock, buffer, strlen(buffer), 0,(struct sockaddr*)&amp;sa, sizeof sa);
+</span><span class="lineno">41 </span>  if (bytes_sent &lt; 0) {
+<span class="lineno">42 </span>    printf("Error sending packet: %s\n", strerror(errno));
+<span class="lineno">43 </span>    exit(EXIT_FAILURE);
+<span class="lineno">44 </span>  }
+<span class="lineno">45 </span> 
+<span class="lineno">46 </span>  close(sock); /* close the socket */
+<span class="lineno">47 </span>  return 0;
+<span class="lineno">48 </span>}
+</pre></div>
+<p>In this code, <i>buffer</i> is a pointer to the data to be sent, and <i>buffer_length</i> specifies the size of the data.</p>
+<h2><span class="mw-headline" id="Caveats">Caveats</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Berkeley_sockets&amp;action=edit&amp;section=23" title="Edit section: Caveats">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>For TCP connections, the operating system may have to retransmit the data given to it with a <code class="mw-highlight" id="" style="" dir="ltr">write()</code> call. However, the user space program is free to delete the data buffer passed to <code class="mw-highlight" id="" style="" dir="ltr">write()</code> after <code class="mw-highlight" id="" style="" dir="ltr">write()</code> returns. This implies that the operating system must make a copy of the data which can lead to a considerable CPU load in high throughput/performance applications. Other APIs, such as those supporting <a href="/wiki/Remote_direct_memory_access" title="Remote direct memory access">RDMA</a> require that the data buffer is not released until the acknowledgement from the remote end has been received and thus make it possible to have <a href="/wiki/Zero-copy" title="Zero-copy">zero memory copy</a> operations.</p>
+<h2><span class="mw-headline" id="References">References</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Berkeley_sockets&amp;action=edit&amp;section=24" title="Edit section: References">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="reflist" style="list-style-type: decimal;">
+<ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><b><a href="#cite_ref-1">^</a></b></span> <span class="reference-text">E. g. in the <a href="/wiki/Ruby_(programming_language)" title="Ruby (programming language)">Ruby programming language</a> <a rel="nofollow" class="external text" href="http://www.ruby-doc.org/stdlib-1.9.3/libdoc/socket/rdoc/Socket.html">ruby-doc::Socket</a></span></li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><b><a href="#cite_ref-2">^</a></b></span> <span class="reference-text"><cite class="citation web"><a rel="nofollow" class="external text" href="http://www.opengroup.org/onlinepubs/9699919799/functions/contents.html">"— POSIX.1-2008 specification"</a>. Opengroup.org<span class="reference-accessdate">. Retrieved <span class="nowrap">2012-07-26</span></span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ABerkeley+sockets&amp;rft.btitle=%94+POSIX.1-2008+specification&amp;rft.genre=unknown&amp;rft_id=http%3A%2F%2Fwww.opengroup.org%2Fonlinepubs%2F9699919799%2Ffunctions%2Fcontents.html&amp;rft.pub=Opengroup.org&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-FOOTNOTE2013StevensRago607-3"><span class="mw-cite-backlink"><b><a href="#cite_ref-FOOTNOTE2013StevensRago607_3-0">^</a></b></span> <span class="reference-text"><a href="#CITEREF2013StevensRago607">2013, Stevens &amp; Rago 607</a>.</span></li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><b><a href="#cite_ref-4">^</a></b></span> <span class="reference-text"><i>UNIX Network Programming</i> Volume 1, Third Edition: The Sockets Networking API, W. Richard Stevens, Bill Fenner, Andrew M. Rudoff, Addison Wesley, 2003.</span></li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><b><a href="#cite_ref-5">^</a></b></span> <span class="reference-text"><cite class="citation web"><a rel="nofollow" class="external text" href="http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/sys_socket.h.html">"The Open Group Base Specifications Issue 7"</a>. Pubs.opengroup.org<span class="reference-accessdate">. Retrieved <span class="nowrap">2012-07-26</span></span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ABerkeley+sockets&amp;rft.btitle=The+Open+Group+Base+Specifications+Issue+7&amp;rft.genre=unknown&amp;rft_id=http%3A%2F%2Fpubs.opengroup.org%2Fonlinepubs%2F9699919799%2Fbasedefs%2Fsys_socket.h.html&amp;rft.pub=Pubs.opengroup.org&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><b><a href="#cite_ref-6">^</a></b></span> <span class="reference-text"><a rel="nofollow" class="external free" href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms740548(v=vs.85).aspx">https://msdn.microsoft.com/en-us/library/windows/desktop/ms740548(v=vs.85).aspx</a></span></li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><b><a href="#cite_ref-7">^</a></b></span> <span class="reference-text"><cite class="citation web"><a rel="nofollow" class="external text" href="http://beej.us/guide/bgnet/">"Beej's Guide to Network Programming"</a>. Beej.us. 2007-05-05<span class="reference-accessdate">. Retrieved <span class="nowrap">2012-07-26</span></span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ABerkeley+sockets&amp;rft.btitle=Beej%27s+Guide+to+Network+Programming&amp;rft.date=2007-05-05&amp;rft.genre=unknown&amp;rft_id=http%3A%2F%2Fbeej.us%2Fguide%2Fbgnet%2F&amp;rft.pub=Beej.us&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><b><a href="#cite_ref-8">^</a></b></span> <span class="reference-text"><cite class="citation web"><a rel="nofollow" class="external text" href="http://www.softlab.ntua.gr/facilities/documentation/unix/unix-socket-faq/unix-socket-faq-4.html#ss4.2">"terminating sockets"</a>. Softlab.ntua.gr<span class="reference-accessdate">. Retrieved <span class="nowrap">2012-07-26</span></span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ABerkeley+sockets&amp;rft.btitle=terminating+sockets&amp;rft.genre=unknown&amp;rft_id=http%3A%2F%2Fwww.softlab.ntua.gr%2Ffacilities%2Fdocumentation%2Funix%2Funix-socket-faq%2Funix-socket-faq-4.html%23ss4.2&amp;rft.pub=Softlab.ntua.gr&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><b><a href="#cite_ref-9">^</a></b></span> <span class="reference-text"><cite class="citation web"><a rel="nofollow" class="external text" href="http://www.softlab.ntua.gr/facilities/documentation/unix/unix-socket-faq/unix-socket-faq-2.html#time_wait">"ntua.gr - Programming UNIX Sockets in C - Frequently Asked Questions: Questions regarding both Clients and Servers (TCP/SOCK_STREAM)"</a>. Softlab.ntua.gr<span class="reference-accessdate">. Retrieved <span class="nowrap">2012-07-26</span></span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ABerkeley+sockets&amp;rft.btitle=ntua.gr+-+Programming+UNIX+Sockets+in+C+-+Frequently+Asked+Questions%3A+Questions+regarding+both+Clients+and+Servers+%28TCP%2FSOCK_STREAM%29&amp;rft.genre=unknown&amp;rft_id=http%3A%2F%2Fwww.softlab.ntua.gr%2Ffacilities%2Fdocumentation%2Funix%2Funix-socket-faq%2Funix-socket-faq-2.html%23time_wait&amp;rft.pub=Softlab.ntua.gr&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+</ol>
+</div>
+<p>The <i><a href="/wiki/De_jure" title="De jure">de jure</a></i> standard definition of the Sockets interface is contained in the POSIX standard, known as:</p>
+<ul>
+<li><a href="/wiki/IEEE" class="mw-redirect" title="IEEE">IEEE</a> Std. 1003.1-2001 Standard for Information Technology—Portable Operating System Interface (POSIX).</li>
+<li>Open Group Technical Standard: Base Specifications, Issue 6, December 2001.</li>
+<li>ISO/IEC 9945:2002</li>
+</ul>
+<p>Information about this standard and ongoing work on it is available from <a rel="nofollow" class="external text" href="http://www.opengroup.org/austin/">the Austin website</a>.</p>
+<p>The IPv6 extensions to the base socket API are documented in <a class="external mw-magiclink-rfc" rel="nofollow" href="//tools.ietf.org/html/rfc3493">RFC 3493</a> and <a class="external mw-magiclink-rfc" rel="nofollow" href="//tools.ietf.org/html/rfc3542">RFC 3542</a>.</p>
+<ul>
+<li><cite class="citation book">W. Richard, Stevens; Stephen A., Rago (May 24, 2013). <a rel="nofollow" class="external text" href="http://www.kohala.com/start/apue.html"><i>Advanced Programming in the UNIX Environment</i></a> (Third ed.). <a href="/wiki/Addison-Wesley_Professional" class="mw-redirect" title="Addison-Wesley Professional">Addison-Wesley Professional</a>. <a href="/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&#160;<a href="/wiki/Special:BookSources/978-0321637734" title="Special:BookSources/978-0321637734">978-0321637734</a><span class="reference-accessdate">. Retrieved <span class="nowrap">27 February</span> 2015</span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ABerkeley+sockets&amp;rft.aufirst=Stevens&amp;rft.aulast=W.+Richard&amp;rft.au=Stephen+A.%2C+Rago&amp;rft.btitle=Advanced+Programming+in+the+UNIX+Environment&amp;rft.date=2013-05-24&amp;rft.edition=Third&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fwww.kohala.com%2Fstart%2Fapue.html&amp;rft.isbn=978-0321637734&amp;rft.pub=Addison-Wesley+Professional&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></li>
+</ul>
+<h2><span class="mw-headline" id="External_links">External links</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Berkeley_sockets&amp;action=edit&amp;section=25" title="Edit section: External links">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a href="/wiki/Manual_page_(Unix)" class="mw-redirect" title="Manual page (Unix)">Unix Manual Pages</a></li>
+<li><a rel="nofollow" class="external text" href="http://www.die.net/doc/linux/man/man2/accept.2.html">accept(2)</a></li>
+<li><a rel="nofollow" class="external text" href="http://www.die.net/doc/linux/man/man2/connect.2.html">connect(2)</a></li>
+<li><a rel="nofollow" class="external text" href="http://docs.freebsd.org/44doc/psd/20.ipctut/paper.pdf">UNIX Programmer's Supplementary Documents (PSD: 20-1)</a></li>
+<li><a rel="nofollow" class="external text" href="http://beej.us/guide/bgnet/">Beej's Guide to Network Programming</a> - 2007</li>
+<li><a rel="nofollow" class="external text" href="http://www.developerweb.net/forum/forumdisplay.php?f=70">UnixSocket FAQ</a></li>
+<li><a rel="nofollow" class="external text" href="http://heather.cs.ucdavis.edu/~matloff/Networks/Intro/NetIntro.pdf">quick TCP-IP NetIntro with C examples</a></li>
+<li><a rel="nofollow" class="external text" href="http://msdn2.microsoft.com/en-us/library/ms740096.aspx">Porting Berkeley Socket programs to Winsock</a> - Microsoft's documentation.</li>
+<li><a rel="nofollow" class="external text" href="http://www.softlab.ntua.gr/facilities/documentation/unix/unix-socket-faq/unix-socket-faq.html">Programming UNIX Sockets in C - Frequently Asked Questions</a> - 1996</li>
+<li><a rel="nofollow" class="external text" href="http://www.linuxjournal.com/article/2333">Linux network programming</a> - <i><a href="/wiki/Linux_Journal" title="Linux Journal">Linux Journal</a></i>, 1998</li>
+</ul>
+<p><span class="citation foldoc">This article is based on material taken from the <a href="/wiki/Free_On-line_Dictionary_of_Computing" title="Free On-line Dictionary of Computing">Free On-line Dictionary of Computing</a> prior to 1 November 2008 and incorporated under the "relicensing" terms of the <a href="/wiki/GNU_Free_Documentation_License" title="GNU Free Documentation License">GFDL</a>, version 1.3 or later.</span></p>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:85068-0!*!0!!en!4!* and timestamp 20161031050028 and revision id 727277547
+ -->
+<noscript><img src="//en.wikipedia.org/wiki/Special:CentralAutoLogin/start?type=1x1" alt="" title="" width="1" height="1" style="border: none; position: absolute;" /></noscript></div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://en.wikipedia.org/w/index.php?title=Berkeley_sockets&amp;oldid=727277547">https://en.wikipedia.org/w/index.php?title=Berkeley_sockets&amp;oldid=727277547</a>"					</div>
+				<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/wiki/Help:Category" title="Help:Category">Categories</a>: <ul><li><a href="/wiki/Category:Network_socket" title="Category:Network socket">Network socket</a></li><li><a href="/wiki/Category:Application_programming_interfaces" title="Category:Application programming interfaces">Application programming interfaces</a></li></ul></div><div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul><li><a href="/wiki/Category:Articles_with_example_C_code" title="Category:Articles with example C code">Articles with example C code</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-anonuserpage">Not logged in</li><li id="pt-anontalk"><a href="/wiki/Special:MyTalk" title="Discussion about edits from this IP address [n]" accesskey="n">Talk</a></li><li id="pt-anoncontribs"><a href="/wiki/Special:MyContributions" title="A list of edits made from this IP address [y]" accesskey="y">Contributions</a></li><li id="pt-createaccount"><a href="/w/index.php?title=Special:CreateAccount&amp;returnto=Berkeley+sockets" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="/w/index.php?title=Special:UserLogin&amp;returnto=Berkeley+sockets" title="You're encouraged to log in; however, it's not mandatory. [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="/wiki/Berkeley_sockets"  title="View the content page [c]" accesskey="c">Article</a></span></li>
+															<li  id="ca-talk"><span><a href="/wiki/Talk:Berkeley_sockets"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Talk</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="/wiki/Berkeley_sockets" >Read</a></span></li>
+															<li id="ca-edit"><span><a href="/w/index.php?title=Berkeley_sockets&amp;action=edit"  title="Edit this page [e]" accesskey="e">Edit</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="/w/index.php?title=Berkeley_sockets&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="/w/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search Wikipedia" title="Search Wikipedia [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Special:Search" name="title"/><input type="submit" name="fulltext" value="Search" title="Search Wikipedia for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="/wiki/Main_Page"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="/wiki/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-contents"><a href="/wiki/Portal:Contents" title="Guides to browsing Wikipedia">Contents</a></li><li id="n-featuredcontent"><a href="/wiki/Portal:Featured_content" title="Featured content – the best of Wikipedia">Featured content</a></li><li id="n-currentevents"><a href="/wiki/Portal:Current_events" title="Find background information on current events">Current events</a></li><li id="n-randompage"><a href="/wiki/Special:Random" title="Load a random article [x]" accesskey="x">Random article</a></li><li id="n-sitesupport"><a href="https://donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C13_en.wikipedia.org&amp;uselang=en" title="Support us">Donate to Wikipedia</a></li><li id="n-shoplink"><a href="//shop.wikimedia.org" title="Visit the Wikipedia store">Wikipedia store</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-interaction' aria-labelledby='p-interaction-label'>
+			<h3 id='p-interaction-label'>Interaction</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-help"><a href="/wiki/Help:Contents" title="Guidance on how to use and edit Wikipedia">Help</a></li><li id="n-aboutsite"><a href="/wiki/Wikipedia:About" title="Find out about Wikipedia">About Wikipedia</a></li><li id="n-portal"><a href="/wiki/Wikipedia:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li><li id="n-recentchanges"><a href="/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-contactpage"><a href="//en.wikipedia.org/wiki/Wikipedia:Contact_us" title="How to contact Wikipedia">Contact page</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="/wiki/Special:WhatLinksHere/Berkeley_sockets" title="List of all English Wikipedia pages containing links to this page [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/Berkeley_sockets" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="/wiki/Wikipedia:File_Upload_Wizard" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-permalink"><a href="/w/index.php?title=Berkeley_sockets&amp;oldid=727277547" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="/w/index.php?title=Berkeley_sockets&amp;action=info" title="More information about this page">Page information</a></li><li id="t-wikibase"><a href="https://www.wikidata.org/wiki/Q13360597" title="Link to connected data repository item [g]" accesskey="g">Wikidata item</a></li><li id="t-cite"><a href="/w/index.php?title=Special:CiteThisPage&amp;page=Berkeley_sockets&amp;id=727277547" title="Information on how to cite this page">Cite this page</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-coll-print_export' aria-labelledby='p-coll-print_export-label'>
+			<h3 id='p-coll-print_export-label'>Print/export</h3>
+
+			<div class="body">
+									<ul>
+						<li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Berkeley+sockets">Create a book</a></li><li id="coll-download-as-rdf2latex"><a href="/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Berkeley+sockets&amp;returnto=Berkeley+sockets&amp;oldid=727277547&amp;writer=rdf2latex">Download as PDF</a></li><li id="t-print"><a href="/w/index.php?title=Berkeley_sockets&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-lang' aria-labelledby='p-lang-label'>
+			<h3 id='p-lang-label'>Languages</h3>
+
+			<div class="body">
+									<ul>
+						<li class="interlanguage-link interwiki-cs"><a href="https://cs.wikipedia.org/wiki/Berkeley_sockets" title="Berkeley sockets – Czech" lang="cs" hreflang="cs" class="interlanguage-link-target">Čeština</a></li><li class="interlanguage-link interwiki-de"><a href="https://de.wikipedia.org/wiki/Socket_(Software)" title="Socket (Software) – German" lang="de" hreflang="de" class="interlanguage-link-target">Deutsch</a></li><li class="interlanguage-link interwiki-fa"><a href="https://fa.wikipedia.org/wiki/%D8%B3%D9%88%DA%A9%D8%AA%E2%80%8C%D9%87%D8%A7%DB%8C_%D8%A8%D8%B1%DA%A9%D9%84%DB%8C" title="سوکت‌های برکلی – Persian" lang="fa" hreflang="fa" class="interlanguage-link-target">فارسی</a></li><li class="interlanguage-link interwiki-fr"><a href="https://fr.wikipedia.org/wiki/Berkeley_sockets" title="Berkeley sockets – French" lang="fr" hreflang="fr" class="interlanguage-link-target">Français</a></li><li class="interlanguage-link interwiki-ja"><a href="https://ja.wikipedia.org/wiki/%E3%82%BD%E3%82%B1%E3%83%83%E3%83%88_(BSD)" title="ソケット (BSD) – Japanese" lang="ja" hreflang="ja" class="interlanguage-link-target">日本語</a></li><li class="interlanguage-link interwiki-ru"><a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D0%BA%D0%B5%D1%82%D1%8B_%D0%91%D0%B5%D1%80%D0%BA%D0%BB%D0%B8" title="Сокеты Беркли – Russian" lang="ru" hreflang="ru" class="interlanguage-link-target">Русский</a></li><li class="interlanguage-link interwiki-sv"><a href="https://sv.wikipedia.org/wiki/Berkeley_sockets" title="Berkeley sockets – Swedish" lang="sv" hreflang="sv" class="interlanguage-link-target">Svenska</a></li><li class="interlanguage-link interwiki-tr"><a href="https://tr.wikipedia.org/wiki/Berkeley_soketleri" title="Berkeley soketleri – Turkish" lang="tr" hreflang="tr" class="interlanguage-link-target">Türkçe</a></li><li class="interlanguage-link interwiki-uk"><a href="https://uk.wikipedia.org/wiki/%D0%A1%D0%BE%D0%BA%D0%B5%D1%82%D0%B8_%D0%91%D0%B5%D1%80%D0%BA%D0%BB%D1%96" title="Сокети Берклі – Ukrainian" lang="uk" hreflang="uk" class="interlanguage-link-target">Українська</a></li><li class="interlanguage-link interwiki-zh"><a href="https://zh.wikipedia.org/wiki/Berkeley%E5%A5%97%E6%8E%A5%E5%AD%97" title="Berkeley套接字 – Chinese" lang="zh" hreflang="zh" class="interlanguage-link-target">中文</a></li><li class="uls-p-lang-dummy"><a href="#"></a></li>					</ul>
+				<div class='after-portlet after-portlet-lang'><span class="wb-langlinks-edit wb-langlinks-link"><a href="https://www.wikidata.org/wiki/Q13360597#sitelinks-wikipedia" title="Edit interlanguage links" class="wbc-editpage">Edit links</a></span></div>			</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 27 June 2016, at 22:13.</li>
+											<li id="footer-info-copyright">Text is available under the <a rel="license" href="//en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="//creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
+additional terms may apply.  By using this site, you agree to the <a href="//wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> and <a href="//wikimediafoundation.org/wiki/Privacy_policy">Privacy Policy</a>. Wikipedia® is a registered trademark of the <a href="//www.wikimediafoundation.org/">Wikimedia Foundation, Inc.</a>, a non-profit organization.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="https://wikimediafoundation.org/wiki/Privacy_policy" class="extiw" title="wmf:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
+											<li id="footer-places-disclaimer"><a href="/wiki/Wikipedia:General_disclaimer" title="Wikipedia:General disclaimer">Disclaimers</a></li>
+											<li id="footer-places-contact"><a href="//en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact Wikipedia</a></li>
+											<li id="footer-places-developers"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/How_to_contribute">Developers</a></li>
+											<li id="footer-places-cookiestatement"><a href="https://wikimediafoundation.org/wiki/Cookie_statement">Cookie statement</a></li>
+											<li id="footer-places-mobileview"><a href="//en.m.wikipedia.org/w/index.php?title=Berkeley_sockets&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="https://wikimediafoundation.org/"><img src="/static/images/wikimedia-button.png" srcset="/static/images/wikimedia-button-1.5x.png 1.5x, /static/images/wikimedia-button-2x.png 2x" width="88" height="31" alt="Wikimedia Foundation"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="//www.mediawiki.org/"><img src="/static/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/static/images/poweredby_mediawiki_132x47.png 1.5x, /static/images/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.load(["ext.cite.a11y","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.gadget.teahouse","ext.gadget.ReferenceTooltips","ext.gadget.watchlist-notice","ext.gadget.DRN-wizard","ext.gadget.charinsert","ext.gadget.refToolbar","ext.gadget.extra-toolbar-buttons","ext.gadget.switcher","ext.gadget.featured-articles-links","mmv.bootstrap.autostart","ext.visualEditor.targetLoader","ext.eventLogging.subscriber","ext.wikimediaEvents","ext.navigationTiming","ext.uls.eventlogger","ext.uls.init","ext.centralNotice.geoIP","ext.centralNotice.startUp"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":67,"wgHostname":"mw1170"});});</script>
+	</body>
+</html>

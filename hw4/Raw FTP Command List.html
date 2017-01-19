@@ -1,0 +1,390 @@
+<html>
+<head>
+<title>Raw FTP Command List</title>
+<style>
+body,tr,td	{
+	font-family: Verdana, 'Lucida Grande', Geneva, Lucida, Arial, Helvetica, sans-serif;
+	padding: 25px, 25px, 25px, 25px;
+	font-size: 0.9em;
+	}
+h3	{
+	background: #eeeeee;
+	width: 100%
+	}
+code, tt, pre, samp {
+	font-family: "lucida console", monaco, "andale mono", "courier new", courier;
+	background: #eeeeff;
+	padding: 0px, 5px, 0px, 5px;
+	}
+</style>
+</head>
+
+<body>
+<div style='float:right; padding-left:10px;'>
+<script type="text/javascript"><!--
+google_ad_client = "pub-0254740670772704";
+google_ad_width = 125;
+google_ad_height = 125;
+google_ad_format = "125x125_as";
+google_ad_channel ="8058137228";
+google_ad_type = "text";
+google_color_border = "DDDDDD";
+google_color_bg = "FFFFFF";
+google_color_link = "000000";
+google_color_url = "666666";
+google_color_text = "333333";
+//--></script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<br>
+You are on the <a href='http://www.nsftools.com'>nsftools.com</a> site 
+<p>
+This page originally appeared at <a href='http://www.dreamhaven.org/ftp-raw.html'>http://www.dreamhaven.org/ftp-raw.html</a>, but the last time I looked it wasn't there any more, so I posted a local copy for you here. If you were really looking for a list of commands for the Microsoft Windows command-line FTP client, please <a href="MSFTP.htm">look here</a> instead.<p>
+<hr>
+<h2>List of raw FTP commands</h2>
+
+<em>(Warning: this is a technical document, not necessary for most FTP
+use.)</em>
+
+<p>Note that commands marked with a * are not implemented in a number of
+FTP servers.
+<p>
+
+<h3>Common commands</h3>
+<ul>
+<li><a href="#ABOR">ABOR</a> - <b>abor</b>t a file transfer
+<li><a href="#CWD">CWD</a> - <b>c</b>hange <b>w</b>orking <b>d</b>irectory
+<li><a href="#DELE">DELE</a> - <b>dele</b>te a remote file
+<li><a href="#LIST">LIST</a> - <b>list</b> remote files
+<li><a href="#MDTM">MDTM</a> - return the <b>m</b>o<b>d</b>ification <b>t</b>i<b>m</b>e of a file
+<li><a href="#MKD">MKD</a> - <b>m</b>a<b>k</b>e a remote <b>d</b>irectory
+<li><a href="#NLST">NLST</a> - <b>n</b>ame <b>l</b>i<b>st</b> of remote directory
+<li><a href="#PASS">PASS</a> - send <b>pass</b>word
+<li><a href="#PASV">PASV</a> - enter <b>pas</b>si<b>v</b>e mode
+<li><a href="#PORT">PORT</a> - open a data <b>port</b>
+<li><a href="#PWD">PWD</a> - <b>p</b>rint <b>w</b>orking <b>d</b>irectory
+<li><a href="#QUIT">QUIT</a> - terminate the connection
+<li><a href="#RETR">RETR</a> - <b>retr</b>ieve a remote file
+<li><a href="#RMD">RMD</a> - <b>r</b>e<b>m</b>ove a remote <b>d</b>irectory
+<li><a href="#RNFR">RNFR</a> - <b>r</b>e<b>n</b>ame <b>fr</b>om
+<li><a href="#RNTO">RNTO</a> - <b>r</b>e<b>n</b>ame <b>to</b>
+<li><a href="#SITE">SITE</a> - <b>site</b>-specific commands
+<li><a href="#SIZE">SIZE</a> - return the <b>size</b> of a file
+<li><a href="#STOR">STOR</a> - <b>stor</b>e a file on the remote host
+<li><a href="#TYPE">TYPE</a> - set transfer <b>type</b>
+<li><a href="#USER">USER</a> - send <b>user</b>name
+</ul>
+
+<h3>Less common commands</h3>
+<ul>
+<li><a href="#ACCT">ACCT</a>* - send <b>acc</b>oun<b>t</b> information
+<li><a href="#APPE">APPE</a> - <b>appe</b>nd to a remote file
+<li><a href="#CDUP">CDUP</a> - CWD to the parent of the current directory
+<li><a href="#HELP">HELP</a> - return <b>help</b> on using the server
+<li><a href="#MODE">MODE</a> - set transfer <b>mode</b>
+<li><a href="#NOOP">NOOP</a> - do nothing
+<li><a href="#REIN">REIN</a>* - <b>rein</b>itialize the connection
+<li><a href="#STAT">STAT</a> - return server <b>stat</b>us
+<li><a href="#STOU">STOU</a> - <b>sto</b>re a file <b>u</b>niquely
+<li><a href="#STRU">STRU</a> - set file transfer <b>stru</b>cture
+<li><a href="#SYST">SYST</a> - return <b>syst</b>em type
+</ul>
+
+<hr>
+
+<a name=ABOR></a>
+<h3>ABOR</h3>
+<i>Syntax:</i> <samp>ABOR</samp>
+<p>
+Aborts a file transfer currently in progress.
+<p>
+<a name=ACCT></a>
+<h3>ACCT*</h3>
+<i>Syntax:</i> <samp>ACCT <i>account-info</i></samp>
+<p>
+This command is used to send account information on systems that require
+it.  Typically sent after a <a href="#PASS">PASS</a> command.
+<p>
+<a name=ALLO></a>
+<h3>ALLO</h3>
+<i>Syntax:</i> <samp>ALLO <i>size</i> [R <i>max-record-size</i>]</samp>
+<p>
+Allocates sufficient storage space to receive a file.  If the maximum
+size of a record also needs to be known, that is sent as a second
+numeric parameter following a space, the capital letter "R", and another
+space.
+<p>
+<a name=APPE></a>
+<h3>APPE</h3>
+<i>Syntax:</i> <samp>APPE <i>remote-filename</i></samp>
+<p>
+Append data to the end of a file on the remote host.  If the file does
+not already exist, it is created.  This command must be preceded by a
+<a href="#PORT">PORT</a> or <a href="#PASV">PASV</a> command so that the
+server knows where to receive data from.
+<p>
+<a name=CDUP></a>
+<h3>CDUP</h3>
+<i>Syntax:</i> <samp>CDUP</samp>
+<p>
+Makes the parent of the current directory be the current directory.
+<p>
+<a name=CWD></a>
+<h3>CWD</h3>
+<i>Syntax:</i> <samp>CWD <i>remote-directory</i></samp>
+<p>
+Makes the given directory be the current directory on the remote host.
+<p>
+<a name=DELE></a>
+<h3>DELE</h3>
+<i>Syntax:</i> <samp>DELE <i>remote-filename</i></samp>
+<p>
+Deletes the given file on the remote host.
+<p>
+<a name=HELP></a>
+<h3>HELP</h3>
+<i>Syntax:</i> <samp>HELP [<i>command</i>]</samp>
+<p>
+If a <i>command</i> is given, returns help on that command; otherwise,
+returns general help for the FTP server (usually a list of supported
+commands).
+<p>
+<a name=LIST></a>
+<h3>LIST</h3>
+<i>Syntax:</i> <samp>LIST [<i>remote-filespec</i>]</samp>
+<p>
+If <i>remote-filespec</i> refers to a file, sends information about that
+file.  If <i>remote-filespec</i> refers to a directory, sends information
+about each file in that directory.  <i>remote-filespec</i> defaults to the
+current directory.  This command must be preceded by a
+<a href="#PORT">PORT</a> or <a href="#PASV">PASV</a> command.
+<p>
+<a name=MDTM></a>
+<h3>MDTM</h3>
+<i>Syntax:</i> <samp>MDTM <i>remote-filename</i></samp>
+<p>
+Returns the last-modified time of the given file on the remote host in
+the format "<samp>YYYYMMDDhhmmss</samp>": <samp>YYYY</samp> is the
+four-digit year, <samp>MM</samp> is the month from 01 to 12,
+<samp>DD</samp> is the day of the month from 01 to 31, <samp>hh</samp> is
+the hour from 00 to 23, <samp>mm</samp> is the minute from 00 to 59, and
+<samp>ss</samp> is the second from 00 to 59.
+<p>
+<a name=MKD></a>
+<h3>MKD</h3>
+<i>Syntax:</i> <samp>MKD <i>remote-directory</i></samp>
+<p>
+Creates the named directory on the remote host.
+<p>
+<a name=MODE></a>
+<h3>MODE</h3>
+<i>Syntax:</i> <samp>MODE <i>mode-character</i></samp>
+<p>
+Sets the transfer mode to one of:
+<ul>
+<li>S - Stream
+<li>B - Block
+<li>C - Compressed
+</ul>
+The default mode is Stream.
+<p>
+<a name=NLST></a>
+<h3>NLST</h3>
+<i>Syntax:</i> <samp>NLST [<i>remote-directory</i>]</samp>
+<p>
+Returns a list of filenames in the given directory (defaulting to the
+current directory), with no other information.  Must be preceded by a
+<a href="#PORT">PORT</a> or <a href="#PASV">PASV</a> command.
+<p>
+<a name=NOOP></a>
+<h3>NOOP</h3>
+<i>Syntax:</i> <samp>NOOP</samp>
+<p>
+Does nothing except return a response.
+<p>
+<a name=PASS></a>
+<h3>PASS</h3>
+<i>Syntax:</i> <samp>PASS <i>password</i></samp>
+<p>
+After sending the <a href="#USER">USER</a> command, send this command to
+complete the login process.  (Note, however, that an <a href="#ACCT">ACCT</a>
+command may have to be used on some systems.)
+<p>
+<a name=PASV></a>
+<h3>PASV</h3>
+<i>Syntax:</i> <samp>PASV</samp>
+<p>
+Tells the server to enter "passive mode".  In passive mode, the server will
+wait for the client to establish a connection with it rather than
+attempting to connect to a client-specified port.  The server will respond
+with the address of the port it is listening on, with a message like:<br>
+<samp>227 Entering Passive Mode
+	(<i>a1</i>,<i>a2</i>,<i>a3</i>,<i>a4</i>,<i>p1</i>,<i>p2</i>)</samp><br>
+where <i>a1</i>.<i>a2</i>.<i>a3</i>.<i>a4</i> is the IP address and
+<i>p1</i>*256+<i>p2</i> is the port number.
+<p>
+<a name=PORT></a>
+<h3>PORT</h3>
+<i>Syntax:</i> <samp>PORT
+	<i>a1</i>,<i>a2</i>,<i>a3</i>,<i>a4</i>,<i>p1</i>,<i>p2</i></samp>
+<p>
+Specifies the host and port to which the server should connect for the next
+file transfer.  This is interpreted as IP address
+<i>a1</i>.<i>a2</i>.<i>a3</i>.<i>a4</i>, port <i>p1</i>*256+<i>p2</i>.
+<p>
+<a name=PWD></a>
+<h3>PWD</h3>
+<i>Syntax:</i> <samp>PWD</samp>
+<p>
+Returns the name of the current directory on the remote host.
+<p>
+<a name=QUIT></a>
+<h3>QUIT</h3>
+<i>Syntax:</i> <samp>QUIT</samp>
+<p>
+Terminates the command connection.
+<p>
+<a name=REIN></a>
+<h3>REIN*</h3>
+<i>Syntax:</i> <samp>REIN</samp>
+<p>
+Reinitializes the command connection - cancels the current
+user/password/account information.  Should be followed by a
+<a href="#USER">USER</a> command for another login.
+<p>
+<a name=REST></a>
+<h3>REST</h3>
+<i>Syntax:</i> <samp>REST <i>position</i></samp>
+<p>
+Sets the point at which a file transfer should start; useful for resuming
+interrupted transfers.  For nonstructured files, this is simply a decimal
+number.  This command must immediately precede a data transfer command
+(<a href="#RETR">RETR</a> or <a href="#STOR">STOR</a> only); i.e. it must
+come after any <a href="#PORT">PORT</a> or <a href="#PASV">PASV</a> command.
+<p>
+<a name=RETR></a>
+<h3>RETR</h3>
+<i>Syntax:</i> <samp> RETR <i>remote-filename</i></samp>
+<p>
+Begins transmission of a file from the remote host.  Must be preceded by
+either a <a href="#PORT">PORT</a> command or a <a href="#PASV">PASV</a>
+command to indicate where the server should send data.
+<p>
+<a name=RMD></a>
+<h3>RMD</h3>
+<i>Syntax:</i> <samp>RMD <i>remote-directory</i></samp>
+<p>
+Deletes the named directory on the remote host.
+<p>
+<a name=RNFR></a>
+<h3>RNFR</h3>
+<i>Syntax:</i> <samp> RNFR <i>from-filename</i></samp>
+<p>
+Used when renaming a file.  Use this command to specify the file to be
+renamed; follow it with an <a href="#RNTO">RNTO</a> command to specify the
+new name for the file.
+<p>
+<a name=RNTO></a>
+<h3>RNTO</h3>
+<i>Syntax:</i> <samp> RNTO <i>to-filename</i></samp>
+<p>
+Used when renaming a file.  After sending an <a href="#RNFR">RNFR</a>
+command to specify the file to rename, send this command to specify the
+new name for the file.
+<p>
+<a name=SITE></a>
+<h3>SITE*</h3>
+<i>Syntax:</i> <samp>SITE <i>site-specific-command</i></samp>
+<p>
+Executes a site-specific command.
+<p>
+<a name=SIZE></a>
+<h3>SIZE</h3>
+<i>Syntax:</i> <samp>SIZE <i>remote-filename</i></samp>
+<p>
+Returns the size of the remote file as a decimal number.
+<p>
+<a name=STAT></a>
+<h3>STAT</h3>
+<i>Syntax:</i> <samp>STAT [<i>remote-filespec</i>]</samp>
+<p>
+If invoked without parameters, returns general status information about
+the FTP server process.  If a parameter is given, acts like the
+<a href="#LIST">LIST</a> command, except that data is sent over the
+control connection (no <a href="#PORT">PORT</a> or <a href="#PASV">PASV</a>
+command is required).
+<p>
+<a name=STOR></a>
+<h3>STOR</h3>
+<i>Syntax:</i> <samp>STOR <i>remote-filename</i></samp>
+<p>
+Begins transmission of a file to the remote site.  Must be preceded by
+either a <a href="#PORT">PORT</a> command or a <a href="#PASV">PASV</a>
+command so the server knows where to accept data from.
+<p>
+<a name=STOU></a>
+<h3>STOU</h3>
+<i>Syntax:</i> <samp>STOU</samp>
+<p>
+Begins transmission of a file to the remote site; the remote filename
+will be unique in the current directory.  The response from the server
+will include the filename.
+<p>
+<a name=STRU></a>
+<h3>STRU</h3>
+<i>Syntax:</i> <samp>STRU <i>structure-character</i></samp>
+<p>
+Sets the file structure for transfer to one of:
+<ul>
+<li>F - File (no structure)
+<li>R - Record structure
+<li>P - Page structure
+</ul>
+The default structure is File.
+<p>
+<a name=SYST></a>
+<h3>SYST</h3>
+<i>Syntax:</i> <samp>SYST</samp>
+<p>
+Returns a word identifying the system, the word "Type:", and the default
+transfer type (as would be set by the <a href="#TYPE">TYPE</a> command).
+For example: <samp>UNIX Type: L8</samp>
+<p>
+<a name=TYPE></a>
+<h3>TYPE</h3>
+<i>Syntax:</i> <samp>TYPE
+	<i>type-character</i> [<i>second-type-character</i>]</samp>
+<p>
+Sets the type of file to be transferred.  <i>type-character</i> can be any
+of:
+<ul>
+<li>A - ASCII text
+<li>E - EBCDIC text
+<li>I - image (binary data)
+<li>L - local format
+</ul>
+For A and E, the <i>second-type-character</i> specifies how the text
+should be interpreted.  It can be:
+<ul>
+<li>N - Non-print (not destined for printing).  This is the default if
+	<i>second-type-character</i> is omitted.
+<li>T - Telnet format control (<samp>&lt;CR&gt;</samp>,
+	<samp>&lt;FF&gt;</samp>, etc.)
+<li>C - ASA Carriage Control
+</ul>
+For L, the <i>second-type-character</i> specifies the number of bits per
+byte on the local system, and may not be omitted.
+<p>
+<a name=USER></a>
+<h3>USER</h3>
+<i>Syntax:</i> <samp> USER <i>username</i></samp>
+<p>
+Send this command to begin the login process.  <i>username</i> should be a
+valid username on the system, or "anonymous" to initiate an anonymous
+login.
+<p>
+
+</body>
+</html>
